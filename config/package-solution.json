@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "mixologiq-client-side-solution",
+    "id": "4b05b988-79c3-4d91-b44b-2cb288026e48",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "mixologiq description"
+      },
+      "longDescription": {
+        "default": "mixologiq description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "mixologiq Feature",
+        "description": "The feature that activates elements of the mixologiq solution.",
+        "id": "47af9ec5-256b-4e28-ae1f-aee6ad76f893",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/mixologiq.sppkg"
+  }
+}

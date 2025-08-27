@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "mixologiq",
+    "libraryId": "4b05b988-79c3-4d91-b44b-2cb288026e48",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "mixologiq",
+    "solutionShortDescription": "mixologiq description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
