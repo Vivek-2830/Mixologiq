@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/mixologiqHomePage/MixologiqHomePageWebPart.manifest.json"
         }
       ]
+    },
+    "marketing-and-branding-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/marketingAndBranding/MarketingAndBrandingWebPart.js",
+          "manifest": "./src/webparts/marketingAndBranding/MarketingAndBrandingWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "MixologiqHomePageWebPartStrings": "lib/webparts/mixologiqHomePage/loc/{locale}.js"
+    "MixologiqHomePageWebPartStrings": "lib/webparts/mixologiqHomePage/loc/{locale}.js",
+    "MarketingAndBrandingWebPartStrings": "lib/webparts/marketingAndBranding/loc/{locale}.js"
   }
 }

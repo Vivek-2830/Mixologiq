@@ -3,7 +3,7 @@ import styles from './MixologiqHomePage.module.scss';
 import { IMixologiqHomePageProps } from './IMixologiqHomePageProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { sp } from '@pnp/sp/presets/all';
-import { Icon } from 'office-ui-fabric-react';
+import { Icon, PrimaryButton } from 'office-ui-fabric-react';
 
 
 export interface IMixologiqHomePageState {
@@ -33,45 +33,40 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
     } = this.props;
 
     return (
-      <section className="mixologiqHomePage">
+      <section id="mixologiqHomePage" className="hero-section">
         
-        <video autoPlay muted loop playsInline className="video-bg">
-          <source src="https://videocdn.cdnpk.net/videos/2e6a91da-0661-428f-8225-9fddc470790b/horizontal/previews/clear/large.mp4?token=exp=1756293118~hmac=38bb9de46607346b2242812aa690c8d8279951d2d7176dc151c40d7405c74514" type="video/mp4" />
-        </video>
+        <div className="hero-overlay"></div>
 
-        <div className="hero">
-          <div className="content">
-            <p>Automated cocktail machine for precision, speed, and profitability.</p>
-            <h1>Revolutionizing the Cocktail Experience</h1>
-            <a href="#" className="btn">Book a Demo</a>
-          </div>
+        <img src={require("../assets/Images/CocktailImage.jpg")} alt="Mixologiq Hero" className="hero-background" />
 
-          {/* Features */}
-          <div className="features">
-            <div className="feature">
-              <div className="icon"><Icon iconName="LightningBolt" /></div>
-              <h3>Quick</h3>
-              <p>Cocktails in less than 30 seconds</p>
-            </div>
-            <div className="feature">
-              <div className="icon"><Icon iconName="Touch" /></div>
-              <h3>Effortless</h3>
-              <p>Cocktail preparation in just 2 clicks</p>
-            </div>
-            <div className="feature">
-              <div className="icon"><Icon iconName="BullseyeTarget" /></div>
-              <h3>Precision</h3>
-              <p>Perfectly poured cocktails every time</p>
-            </div>
-            <div className="feature">
-              <div className="icon"><Icon iconName="Recipe" /></div>
-              <h3>Variety</h3>
-              <p>300+ Cocktail recipes to explore</p>
-            </div>
-          </div>
+        <div className="hero-content">
+          <p className="hero-subtitle">Distributor Resources</p>
+          <h1 className="hero-title">Welcome to the Mixologiq Partner Hub</h1>
+          <p className="hero-text">
+            Your comprehensive resource center for marketing materials, technical documentation, training videos, 
+            and support tools. Everything you need to successfully sell, install, and support Mixologiq machines.
+          </p>
+          <PrimaryButton text="Get Started" className="hero-button" />
         </div>
-
       </section>
+
     );
   }
 }
+
+ {/* <div className="MXHomePage">
+       
+          <img src={require("../assets/Images/CocktailImage.jpg")} alt="Mixologiq Hero" />
+
+          <div className="content">
+            <p>
+              Automated cocktail machine for precision, speed, <br />
+              and profitability.
+            </p>
+            <h1>
+              Revolutionizing the <br />
+              Cocktail Experience
+            </h1>
+            <PrimaryButton className="viewMore" text="Book a Demo" />
+          </div>
+        </div> */}
