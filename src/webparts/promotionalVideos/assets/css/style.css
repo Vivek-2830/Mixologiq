@@ -14,7 +14,17 @@
 }
 
 .video-bg {
-    width: 34%;
-    height: 34%;
+    height: 230px;
+    width: 90%;
     border-radius: 12px;
+}
+
+.VideosHeader {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.video-container p {
+    color: #1B719D 
 }

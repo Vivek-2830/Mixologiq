@@ -38,16 +38,10 @@ export default class PromotionalVideos extends React.Component<IPromotionalVideo
         </div>
 
         
-        <div className='ms-Grid'>
-          <div className='ms-Grid-row'>
+          <div className='ms-Grid'>
+          
             <div className='ms-Grid-col'>
               <div className='VideosHeader'>
-                <div className='video-container'>
-                  <video autoPlay muted loop playsInline className="video-bg">
-                    <source src="https://videocdn.cdnpk.net/videos/980110cb-af11-434b-8a0c-28b5fc117457/horizontal/previews/clear/large.mp4?token=exp=1756465592~hmac=3bfa61989c1bab8bd30583f31fe298aa675543645c98eb86d5eaa7e8499c9fe2" type="video/mp4" />
-                  </video>
-                  <p>Bartender serving a cocktail</p>
-                </div>
 
                 <div className='video-container'>
                   <video autoPlay muted loop playsInline className="video-bg">
@@ -71,7 +65,7 @@ export default class PromotionalVideos extends React.Component<IPromotionalVideo
                 </div>
 
               </div>
-            </div>
+          
           </div>
 
         </div> 
