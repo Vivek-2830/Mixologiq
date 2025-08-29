@@ -57,7 +57,8 @@
 
 .hero-section {
   position: relative;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 391px;
   display: flex;
   align-items: center;
   padding: 0 50px;
@@ -93,12 +94,13 @@
   text-transform: uppercase;
   margin-bottom: 10px;
   color: #a8c0d9;
+  margin-top: 0px;
 }
 
 .hero-title {
-  font-size: 42px;
-  font-weight: bold;
-  margin: 10px 0 20px;
+  font-size: 38px;
+  font-weight: 700;
+  margin: 14px 0 20px;
   line-height: 1.2;
 }
 
@@ -107,6 +109,7 @@
   line-height: 1.5;
   margin-bottom: 30px;
   color: #e0e8f5;
+  font-weight: 500;
 }
 
 .hero-button {
@@ -115,6 +118,11 @@
   background-color: #ffffffe6;
   color: black;
   height: 37px;
+}
+
+.hero-button:hover {
+  background-color: #ffffffe6;
+  color: black;
 }
 
 

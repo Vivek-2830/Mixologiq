@@ -40,13 +40,14 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
         <img src={require("../assets/Images/CocktailImage.jpg")} alt="Mixologiq Hero" className="hero-background" />
 
         <div className="hero-content">
-          <p className="hero-subtitle">Distributor Resources</p>
-          <h1 className="hero-title">Welcome to the Mixologiq Partner Hub</h1>
+          <p className="hero-subtitle">Partner Marketing Hub</p>
+          <h1 className="hero-title">Marketing & Branding Resources</h1>
           <p className="hero-text">
-            Your comprehensive resource center for marketing materials, technical documentation, training videos, 
-            and support tools. Everything you need to successfully sell, install, and support Mixologiq machines.
+            Access our complete collection of marketing materials, brand assets, and 
+            promotional content. Everything you need to effectively market Mixologiq 
+            products in your region.
           </p>
-          <PrimaryButton text="Get Started" className="hero-button" />
+          <PrimaryButton text="Download All Resources" className="hero-button" />
         </div>
       </section>
 
@@ -54,7 +55,7 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
   }
 }
 
- {/* <div className="MXHomePage">
+{/* <div className="MXHomePage">
        
           <img src={require("../assets/Images/CocktailImage.jpg")} alt="Mixologiq Hero" />
 
@@ -69,4 +70,4 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
             </h1>
             <PrimaryButton className="viewMore" text="Book a Demo" />
           </div>
-        </div> */}
+</div> */}
