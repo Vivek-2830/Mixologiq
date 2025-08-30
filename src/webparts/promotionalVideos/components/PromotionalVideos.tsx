@@ -32,40 +32,35 @@ export default class PromotionalVideos extends React.Component<IPromotionalVideo
     return (
       <section id="promotionalVideos">
         
-        <div className='promotionalVideo'>
+        <div className='promotionalvideo-Section'>
           <h2>Promotional Videos</h2>
           <p>High-quality video content for marketing, training, and promotional purposes.</p>
         </div>
 
-        
-          <div className='ms-Grid'>
-          
-            <div className='ms-Grid-col'>
-              <div className='VideosHeader'>
+        <div className='ms-Grid-col'>
+          <div className='VideosHeader'>
 
-                <div className='video-container'>
-                  <video autoPlay muted loop playsInline className="video-bg">
-                    <source src="https://videocdn.cdnpk.net/videos/611b68bc-f8e4-4463-8eb4-8851e79a18d4/horizontal/previews/clear/large.mp4?token=exp=1756466220~hmac=d6af9a203584f4c44b2ac2665eb78d3108036809bea93012f2ab524fe1f56d27" type="video/mp4" />
-                  </video>
-                  <p>Bartender serving a cocktail</p>
-                </div>
+            <div className='video-container'>
+              <video autoPlay muted loop playsInline className="video-bg">
+                <source src="https://media.istockphoto.com/id/675787809/video/a-blue-martini-splashes-over-a-cherry-in-a-glass.mp4?s=mp4-640x640-is&k=20&c=rrSWOoVn7lBlgObnGJOi6G2OvJ8b1KqZcCmuffk15XY=" type="video/mp4" />
+              </video>
+              <p>Blue Martini Splashes Over a Cherry glass</p>
+            </div>
 
-                <div className='video-container'>
-                  <video autoPlay muted loop playsInline className="video-bg">
-                    <source src="https://videocdn.cdnpk.net/videos/c850127a-18f7-4786-8b97-789f76ef03e1/horizontal/previews/clear/large.mp4?token=exp=1756466262~hmac=a758ce1fb5d109f99b2a407ee8457f93bb3ee57d06c76dac11eac8249f41f2b8" type="video/mp4" />
-                  </video>
-                  <p>Bartender serving a cocktail</p>
-                </div>
+            <div className='video-container'>
+              <video autoPlay muted loop playsInline className="video-bg">
+                <source src="https://cdn.coverr.co/videos/coverr-pouring-into-a-cocktail-shaker-3947/720p.mp4" type="video/mp4" />
+              </video>
+              <p>Cover pouring into a cocktail shaker</p>
+            </div>
 
-                <div className='video-container'>
-                  <video autoPlay muted loop playsInline className="video-bg">
-                    <source src="https://videocdn.cdnpk.net/videos/07fddfe4-3c9b-44f3-b978-75a3bf32fdb5/horizontal/previews/clear/large.mp4?token=exp=1756466307~hmac=b67698ca7bfda66b4d216acfdcc5dc9e765841f73950542b575e307ddc7d51bc" type="video/mp4" />
-                  </video>
-                  <p>Bartender serving a cocktail</p>
-                </div>
+            <div className='video-container'>
+              <video autoPlay muted loop playsInline className="video-bg">
+                <source src="https://cdn.coverr.co/videos/coverr-making-a-cinco-de-mayo-cocktail-5111/1080p.mp4" type="video/mp4" />
+              </video>
+              <p>Cover making a cinco de mayo cocktail</p>
+            </div>
 
-              </div>
-          
           </div>
 
         </div> 

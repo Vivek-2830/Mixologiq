@@ -3,7 +3,7 @@
   "solution": {
     "name": "mixologiq-client-side-solution",
     "id": "4b05b988-79c3-4d91-b44b-2cb288026e48",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
