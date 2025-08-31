@@ -41,6 +41,14 @@
           "manifest": "./src/webparts/promotionalVideos/PromotionalVideosWebPart.manifest.json"
         }
       ]
+    },
+    "branding-images-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/brandingImages/BrandingImagesWebPart.js",
+          "manifest": "./src/webparts/brandingImages/BrandingImagesWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -49,6 +57,7 @@
     "MarketingAndBrandingWebPartStrings": "lib/webparts/marketingAndBranding/loc/{locale}.js",
     "BrandingGuidelinesWebPartStrings": "lib/webparts/brandingGuidelines/loc/{locale}.js",
     "BrandingSectionWebPartStrings": "lib/webparts/brandingSection/loc/{locale}.js",
-    "PromotionalVideosWebPartStrings": "lib/webparts/promotionalVideos/loc/{locale}.js"
+    "PromotionalVideosWebPartStrings": "lib/webparts/promotionalVideos/loc/{locale}.js",
+    "BrandingImagesWebPartStrings": "lib/webparts/brandingImages/loc/{locale}.js"
   }
 }
