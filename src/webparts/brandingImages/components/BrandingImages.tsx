@@ -16,7 +16,7 @@ export default class BrandingImages extends React.Component<IBrandingImagesProps
         
       this.state = {
   
-      }
+      };
   }
 
   public render(): React.ReactElement<IBrandingImagesProps> {

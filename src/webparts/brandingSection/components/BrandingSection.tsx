@@ -34,12 +34,78 @@ export default class BrandingSection extends React.Component<IBrandingSectionPro
 
         <div className="branding-section">
           <h2>Brand Identity Assets</h2>
-          <p>
-            Official Mixologiq brand assets including logos, guidelines, and visual identity elements.
-          </p>
+          <p>Official Mixologiq brand assets including logos, guidelines, and visual identity elements.</p>
         </div>
-        
-        <div className="assets-grid">
+
+        <div className="resources-container">
+          <div className="resources-grid">
+
+            <div>
+              <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
+                target="_blank" data-interception="off" className="resource-card bg-darkblue">
+                <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Mixologiq Branding Guidelines
+              </a>
+            </div>
+            
+            <div>
+              <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
+                target="_blank" data-interception="off" className="resource-card bg-blue">
+                <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Mixologiq Font, Color Palette & Logo
+              </a>
+            </div>
+
+            <div>
+              <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
+                target="_blank" data-interception="off" className="resource-card bg-green">
+                <img src={require("../assets/Images/file.png")} alt="doc icon" className="icon" /> Mixologiq Corporate Letterhead
+              </a>
+            </div>
+
+            <div>
+              <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
+                target="_blank" data-interception="off" className="resource-card bg-orange">
+                <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Report Mixologiq
+              </a>
+            </div>
+
+            <div>
+              <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
+                target="_blank" data-interception="off" className="resource-card bg-blue">
+                <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Report Asytec Mixologiq
+              </a>
+            </div>
+
+            <div>
+              <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
+                target="_blank" className="resource-card bg-green" data-interception="off">
+                <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Mixologiq x Flowr Agency
+              </a>
+            </div>
+
+            <div>
+              <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
+                target="_blank" data-interception="off" className="resource-card bg-orange">
+                <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Mixologiq Leaflet - A5
+              </a>
+            </div>
+
+            <div>
+              <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
+                target="_blank" data-interception="off" className="resource-card bg-darkblue">
+                <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" />Mixo 8 & Mixo 20 V2
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    );
+  }
+}
+
+
+{/* <div className="assets-grid">
 
           <div className="asset-card">
             <div className="asset-header">
@@ -86,9 +152,4 @@ export default class BrandingSection extends React.Component<IBrandingSectionPro
             </div>
           </div>
 
-        </div>
-        
-      </section>
-    );
-  }
-}
+</div> */}

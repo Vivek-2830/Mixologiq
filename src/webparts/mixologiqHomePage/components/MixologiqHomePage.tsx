@@ -10,7 +10,7 @@ export interface IMixologiqHomePageState {
 
 }
 
-require("../assets/css/style.css");
+require("../assets/style.css");
 
 export default class MixologiqHomePage extends React.Component<IMixologiqHomePageProps, IMixologiqHomePageState> {
 
@@ -33,22 +33,20 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
     } = this.props;
 
     return (
-      <section id="mixologiqHomePage" className="hero-section">
+      <section id="mixologiqHomePage">
         
-        <div className="hero-overlay"></div>
-
-        <img src={require("../assets/Images/CocktailImage.jpg")} alt="Mixologiq Hero" className="hero-background" />
-
-        <div className="hero-content">
-          <p className="hero-subtitle">Partner Marketing Hub</p>
-          <h1 className="hero-title">Marketing & Branding Resources</h1>
-          <p className="hero-text">
-            Access our complete collection of marketing materials, brand assets, and 
-            promotional content. Everything you need to effectively market Mixologiq 
-            products in your region.
-          </p>
-          <PrimaryButton text="Download All Resources" className="hero-button" />
+        <div className="hero">
+          <div className="hero-content">
+            <p className="hero-subtitle">Partner Marketing Hub</p>
+            <h1 className="hero-title">Marketing & Branding Resources</h1>
+            <p className="hero-text">
+              Access our complete collection of marketing materials, brand assets, and 
+              promotional content. Everything you need to effectively market Mixologiq 
+              products in your region.
+            </p>
+          </div> 
         </div>
+
       </section>
 
     );
@@ -70,4 +68,22 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
             </h1>
             <PrimaryButton className="viewMore" text="Book a Demo" />
           </div>
+</div> */}
+
+
+{/* className="hero-section" */}
+        
+{/* <div className="hero-overlay"></div>
+
+<img src={require("../assets/Images/CocktailImage.jpg")} alt="Mixologiq Hero" className="hero-background" />
+
+<div className="hero-content">
+  <p className="hero-subtitle">Partner Marketing Hub</p>
+  <h1 className="hero-title">Marketing & Branding Resources</h1>
+  <p className="hero-text">
+    Access our complete collection of marketing materials, brand assets, and 
+    promotional content. Everything you need to effectively market Mixologiq 
+    products in your region.
+  </p>
+  
 </div> */}

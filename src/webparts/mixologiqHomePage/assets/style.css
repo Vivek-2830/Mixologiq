@@ -55,9 +55,9 @@
 } */
 
 
-.hero-section {
+/* .hero-section {
   position: relative;
-  /* height: 100vh; */
+  height: 100vh;
   height: 391px;
   display: flex;
   align-items: center;
@@ -80,6 +80,27 @@
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 30, 60, 0.7);
   z-index: 1;
+} */
+
+
+.hero {
+  height: 330px;
+  background-image: linear-gradient(
+      rgba(34, 39, 79, 0.85), 
+      rgba(34, 39, 79, 0.85)
+    ), 
+    url('../assets/CocktailImage.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;  
+  color: white;
+  text-align: left;       
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  padding: 0 60px;
 }
 
 .hero-content {
@@ -94,7 +115,6 @@
   text-transform: uppercase;
   margin-bottom: 10px;
   color: #a8c0d9;
-  margin-top: 0px;
 }
 
 .hero-title {
@@ -106,11 +126,11 @@
 
 .hero-text {
   font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 30px;
+  line-height: 1.6;
   color: #e0e8f5;
   font-weight: 500;
 }
+
 
 .hero-button {
   border-radius: 8px;
@@ -125,9 +145,20 @@
   color: black;
 }
 
+#CaptionElementView {
+  border-left: 3px solid #f47721;
+  background-color: hsla(0, 0%, 50.2%, 0);
+  padding: 3px 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
 
 /* ------------------------------------------- */
 #sp-appBar {
   display: none !important;
+}
+
+#CommentsWrapper {
+  display: none;
 }
 /* #spCommandBar{display: none;} */
