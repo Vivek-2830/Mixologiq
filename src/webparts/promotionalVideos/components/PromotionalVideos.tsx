@@ -7,6 +7,7 @@ import { sp } from '@pnp/sp/presets/all';
 require("../assets/css/style.css");
 
 export interface IPromotionalVideosState {
+  PromotionalVideoData : any;
 }
 
 export default class PromotionalVideos extends React.Component<IPromotionalVideosProps, IPromotionalVideosState> {
@@ -15,7 +16,7 @@ export default class PromotionalVideos extends React.Component<IPromotionalVideo
       super(props);
   
       this.state = {
-  
+        PromotionalVideoData : ""
       };
   
   }
@@ -68,17 +69,24 @@ export default class PromotionalVideos extends React.Component<IPromotionalVideo
                   <source src="https://cdn.coverr.co/videos/coverr-making-a-cinco-de-mayo-cocktail-5111/1080p.mp4" type="video/mp4" />
                 </video>
               </a>
-
               <p>Cover making a cinco de mayo cocktail</p>
             </div>
 
           </div>
-
         </div> 
         
       </section>
     );
   }
+
+  public async componentDidMount(){
+    
+  }
+
+  public async GetBrandingVideos() {
+    
+  }
+
 }
 
 
