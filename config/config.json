@@ -10,22 +10,6 @@
         }
       ]
     },
-    "marketing-and-branding-web-part": {
-      "components": [
-        {
-          "entrypoint": "./lib/webparts/marketingAndBranding/MarketingAndBrandingWebPart.js",
-          "manifest": "./src/webparts/marketingAndBranding/MarketingAndBrandingWebPart.manifest.json"
-        }
-      ]
-    },
-    "branding-guidelines-web-part": {
-      "components": [
-        {
-          "entrypoint": "./lib/webparts/brandingGuidelines/BrandingGuidelinesWebPart.js",
-          "manifest": "./src/webparts/brandingGuidelines/BrandingGuidelinesWebPart.manifest.json"
-        }
-      ]
-    },
     "branding-section-web-part": {
       "components": [
         {
@@ -54,8 +38,6 @@
   "externals": {},
   "localizedResources": {
     "MixologiqHomePageWebPartStrings": "lib/webparts/mixologiqHomePage/loc/{locale}.js",
-    "MarketingAndBrandingWebPartStrings": "lib/webparts/marketingAndBranding/loc/{locale}.js",
-    "BrandingGuidelinesWebPartStrings": "lib/webparts/brandingGuidelines/loc/{locale}.js",
     "BrandingSectionWebPartStrings": "lib/webparts/brandingSection/loc/{locale}.js",
     "PromotionalVideosWebPartStrings": "lib/webparts/promotionalVideos/loc/{locale}.js",
     "BrandingImagesWebPartStrings": "lib/webparts/brandingImages/loc/{locale}.js"

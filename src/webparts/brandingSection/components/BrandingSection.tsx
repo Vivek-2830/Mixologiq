@@ -7,6 +7,7 @@ import { sp } from '@pnp/sp/presets/all';
 require("../assets/css/style.css");
 
 export interface IBrandingSectionState {
+  BrandingDocs : any;
 }
 
 export default class BrandingSection extends React.Component<IBrandingSectionProps, IBrandingSectionState> {
@@ -15,7 +16,7 @@ export default class BrandingSection extends React.Component<IBrandingSectionPro
     super(props);
 
     this.state = {
-
+      BrandingDocs : ""
     };
 
   }
@@ -33,14 +34,36 @@ export default class BrandingSection extends React.Component<IBrandingSectionPro
       <section id="brandingSection">
 
         <div className="branding-section">
-          <h2>Brand Identity Assets</h2>
+          <h2>Branding guidelines</h2>
           <p>Official Mixologiq brand assets including logos, guidelines, and visual identity elements.</p>
         </div>
 
         <div className="resources-container">
           <div className="resources-grid">
 
-            <div>
+            {this.state.BrandingDocs.length > 0 ? (
+              this.state.BrandingDocs.map((doc, index) => (
+                <div key={doc.Id}>
+                  <a href={doc.FileRef}
+                    target="_blank"
+                    data-interception="off"
+                    className={`resource-card ${index % 2 === 0 ? "bg-darkblue" : "bg-blue"}`}>
+
+                    {/* Choose file icon by extension */}
+                    <img
+                      src={require("../assets/Images/file.png")}
+                      alt="file icon"
+                      className="icon"
+                    />
+                    {doc.FileLeafRef}
+                  </a>
+                </div>
+              ))
+            ) : (
+              <p>No documents found.</p>
+            )}
+
+            {/* <div>
               <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
                 target="_blank" data-interception="off" className="resource-card bg-darkblue">
                 <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Mixologiq Branding Guidelines
@@ -56,14 +79,14 @@ export default class BrandingSection extends React.Component<IBrandingSectionPro
 
             <div>
               <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
-                target="_blank" data-interception="off" className="resource-card bg-green">
+                target="_blank" data-interception="off" className="resource-card bg-darkblue">
                 <img src={require("../assets/Images/file.png")} alt="doc icon" className="icon" /> Mixologiq Corporate Letterhead
               </a>
             </div>
 
             <div>
               <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
-                target="_blank" data-interception="off" className="resource-card bg-orange">
+                target="_blank" data-interception="off" className="resource-card bg-blue">
                 <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Report Mixologiq
               </a>
             </div>
@@ -77,14 +100,14 @@ export default class BrandingSection extends React.Component<IBrandingSectionPro
 
             <div>
               <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
-                target="_blank" className="resource-card bg-green" data-interception="off">
+                target="_blank" className="resource-card bg-darkblue" data-interception="off">
                 <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Mixologiq x Flowr Agency
               </a>
             </div>
 
             <div>
               <a href="https://asytecfr.sharepoint.com/:b:/s/MixologiqPartners/Ecp8DwgAgKRHo0QAGeeWCY0BdmoAiAbCKrf03UZ6ZgxeEw?e=hqE7qH"
-                target="_blank" data-interception="off" className="resource-card bg-orange">
+                target="_blank" data-interception="off" className="resource-card bg-blue">
                 <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" /> Mixologiq Leaflet - A5
               </a>
             </div>
@@ -94,7 +117,7 @@ export default class BrandingSection extends React.Component<IBrandingSectionPro
                 target="_blank" data-interception="off" className="resource-card bg-darkblue">
                 <img src={require("../assets/Images/file.png")} alt="pdf icon" className="icon" />Mixo 8 & Mixo 20 V2
               </a>
-            </div>
+            </div> */}
 
           </div>
         </div>
@@ -102,6 +125,26 @@ export default class BrandingSection extends React.Component<IBrandingSectionPro
 
     );
   }
+
+  public async componentDidMount() {
+    this.GetDocumentFiles();
+  }
+
+  public async GetDocumentFiles() {
+    try {
+      const items= await sp.web.lists
+        .getByTitle("Branding guidelines") // 👈 library name
+        .items
+        .select("Id","FileLeafRef", "FileRef", "Modified","Editor/Title","File_x0020_Type")
+        .expand("Editor")// latest first
+        .get();
+
+      this.setState({ BrandingDocs: items });
+    } catch (error) {
+      console.error("Error fetching documents: ", error);
+    }
+  }
+
 }
 
 

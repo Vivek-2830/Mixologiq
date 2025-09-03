@@ -11,9 +11,11 @@ import { IReadonlyTheme } from '@microsoft/sp-component-base';
 import * as strings from 'BrandingSectionWebPartStrings';
 import BrandingSection from './components/BrandingSection';
 import { IBrandingSectionProps } from './components/IBrandingSectionProps';
+import { sp } from '@pnp/sp/presets/all';
 
 export interface IBrandingSectionWebPartProps {
   description: string;
+  textField: string;
 }
 
 export default class BrandingSectionWebPart extends BaseClientSideWebPart<IBrandingSectionWebPartProps> {
@@ -24,6 +26,10 @@ export default class BrandingSectionWebPart extends BaseClientSideWebPart<IBrand
   protected onInit(): Promise<void> {
     this._environmentMessage = this._getEnvironmentMessage();
 
+    sp.setup({
+      spfxContext: this.context
+    });
+  
     return super.onInit();
   }
 
@@ -35,7 +41,8 @@ export default class BrandingSectionWebPart extends BaseClientSideWebPart<IBrand
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName
+        userDisplayName: this.context.pageContext.user.displayName,
+        context : this.context
       }
     );
 

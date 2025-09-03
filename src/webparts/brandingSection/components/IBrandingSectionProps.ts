@@ -4,4 +4,5 @@ export interface IBrandingSectionProps {
   environmentMessage: string;
   hasTeamsContext: boolean;
   userDisplayName: string;
+  context : any;
 }

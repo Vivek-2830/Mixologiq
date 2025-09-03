@@ -4,7 +4,10 @@ import { IMixologiqHomePageProps } from './IMixologiqHomePageProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { sp } from '@pnp/sp/presets/all';
 import { Icon, PrimaryButton } from 'office-ui-fabric-react';
-
+import {
+  type IPropertyPaneConfiguration,
+  PropertyPaneTextField
+} from '@microsoft/sp-property-pane';
 
 export interface IMixologiqHomePageState {
 
@@ -35,7 +38,7 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
     return (
       <section id="mixologiqHomePage">
         
-        <div className="hero">
+        <div className="mixologiq-HomePage">
           <div className="hero-content">
             <p className="hero-subtitle">Partner Marketing Hub</p>
             <h1 className="hero-title">Marketing & Branding Resources</h1>

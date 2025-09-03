@@ -26,19 +26,22 @@
 }
 
 .video-bg {
-    height: 250px;
+    height: 150px;
     width: 100%;
     border-radius: 12px;
+    display: block;
+    min-height: 153px;
 }
 
 .VideosHeader {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(217px, 1fr));
     gap: 20px;
+    margin-top: 30px;
 }
 
 .video-container p {
-    margin-top: -5px;
+    font-size: 13px;
     color: #22274F;
     text-align: center;
     font-weight: 500;

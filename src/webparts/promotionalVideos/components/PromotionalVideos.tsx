@@ -4,6 +4,7 @@ import { IPromotionalVideosProps } from './IPromotionalVideosProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { sp } from '@pnp/sp/presets/all';
 
+
 require("../assets/css/style.css");
 
 export interface IPromotionalVideosState {
@@ -38,7 +39,7 @@ export default class PromotionalVideos extends React.Component<IPromotionalVideo
           <p>High-quality video content for marketing, training, and promotional purposes.</p>
         </div>
 
-        <div className='ms-Grid-col'>
+        {/* <div className='ms-Grid-col'>
           <div className='VideosHeader'>
 
          
@@ -73,20 +74,97 @@ export default class PromotionalVideos extends React.Component<IPromotionalVideo
             </div>
 
           </div>
-        </div> 
-        
+        </div>  */}
+
+        {this.state.PromotionalVideoData.length > 0 ? (
+          <div className="VideosHeader">
+            {this.state.PromotionalVideoData.map(file => (
+              <div className="video-container" key={file.Id}>
+                <a href={file.FileRef} target="_blank" data-interception="off" rel="noopener noreferrer">
+                  
+                  {/* <video autoPlay muted loop playsInline className="video-bg">
+                      <source src={file.FileRef} type={`video/${ext}`} />
+                    </video>
+                 */}
+
+                  <video className="video-bg" autoPlay muted loop playsInline crossOrigin="anonymous" src={file.FileRef} />
+                </a>
+                <p className="video-title">{file.Title || file.FileLeafRef}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <></>
+        )}
+
       </section>
     );
   }
 
   public async componentDidMount(){
-    
+    this.GetBrandingVideos();
   }
 
   public async GetBrandingVideos() {
-    
+    try {
+      
+      const items: any[] = await sp.web.lists
+        .getByTitle("Promotional Video") 
+        .items
+        .select("Id", "Title", "FileLeafRef", "FileRef", "File_x0020_Type")
+        .expand("File")();
+
+      console.log("Fetched Files:", items);
+
+      const videoExtensions = ["mp4", "webm", "mov", "avi", "mkv", "ogg","m4v"];
+
+      const videos = items.filter(file => {
+        const ext = file.File_x0020_Type ? file.File_x0020_Type.toLowerCase() : "";
+        return videoExtensions.indexOf(ext) >= 0;
+      });
+
+      this.setState({ PromotionalVideoData: videos });
+
+    } catch (err) {
+      console.error("Error fetching files:", err);
+    }
   }
 
 }
 
 
+// {this.state.PromotionalVideoData.length > 0 ? (
+//   <div className="VideosHeader">
+//   {this.state.PromotionalVideoData.map(file => {
+//     // Normalize extension
+//     const ext = file.File_x0020_Type ? file.File_x0020_Type.toLowerCase() : "";
+
+//     // Supported video formats
+//     const supportedExtensions = ["mp4", "mov", "webm", "ogg", "mkv", "avi", "m4v"];
+//     const isSupported = supportedExtensions.indexOf(ext) >= 0;
+
+//     return (
+//       <div className="ms-Grid-col">
+//         <div className="video-container" key={file.Id}>
+//           {isSupported ? (
+//             <a href={file.FileRef} target="_blank" data-interception="off" rel="noopener noreferrer">
+
+//               {/* <video autoPlay muted loop playsInline className="video-bg">
+//                 <source src={file.FileRef} type={`video/${ext}`} />
+//               </video> */}
+//               <video className="video-bg" autoPlay muted loop playsInline crossOrigin="anonymous"  src={file.FileRef} />
+
+//             </a>
+//           ) : (
+//             <></>
+//           )}
+//           <p>{file.Title || file.FileLeafRef}</p>
+//         </div>
+
+//       </div>
+//     );
+//   })}
+// </div>
+// ) : (
+// <p>Loading...</p>
+// )}
