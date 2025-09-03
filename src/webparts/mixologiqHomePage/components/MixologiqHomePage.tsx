@@ -4,10 +4,6 @@ import { IMixologiqHomePageProps } from './IMixologiqHomePageProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { sp } from '@pnp/sp/presets/all';
 import { Icon, PrimaryButton } from 'office-ui-fabric-react';
-import {
-  type IPropertyPaneConfiguration,
-  PropertyPaneTextField
-} from '@microsoft/sp-property-pane';
 
 export interface IMixologiqHomePageState {
 
