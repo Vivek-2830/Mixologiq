@@ -12,9 +12,16 @@ import * as strings from 'MixologiqHomePageWebPartStrings';
 import MixologiqHomePage from './components/MixologiqHomePage';
 import { IMixologiqHomePageProps } from './components/IMixologiqHomePageProps';
 import { sp } from "@pnp/sp/presets/all";
+import {
+  PropertyFieldFilePicker, IFilePickerResult
+} from "@pnp/spfx-property-controls/lib/PropertyFieldFilePicker";
 
 export interface IMixologiqHomePageWebPartProps {
+  propertyName: string;
+  backgroundImage: string;
   description: string;
+  source: string;
+  filePickerResult: IFilePickerResult;
 }
 
 export default class MixologiqHomePageWebPart extends BaseClientSideWebPart<IMixologiqHomePageWebPartProps> {
@@ -41,7 +48,11 @@ export default class MixologiqHomePageWebPart extends BaseClientSideWebPart<IMix
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
         userDisplayName: this.context.pageContext.user.displayName,
-        context : this.context
+        context : this.context,
+        propertyName: this.properties.propertyName,
+        backgroundImage: this.properties.filePickerResult ? this.properties.filePickerResult.fileAbsoluteUrl : null,
+        source: this.properties.source,
+        filePickerResult: this.properties.filePickerResult
       }
     );
 
@@ -90,9 +101,33 @@ export default class MixologiqHomePageWebPart extends BaseClientSideWebPart<IMix
             {
               groupName: strings.BasicGroupName,
               groupFields: [
+                PropertyPaneTextField('propertyName', {
+                  label: "Label"
+                }),
+                PropertyPaneTextField('source', {
+                  label: "Title"
+                }),
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
-                })
+                }),
+                PropertyFieldFilePicker("portfolioImage", {
+                  context: this.context,
+                  onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
+                  properties: this.properties,
+                  onSave: (e: IFilePickerResult) => {
+                    console.log(e);
+                    this.properties.filePickerResult = e;
+                  },
+                  onChanged: (e: IFilePickerResult) => {
+                    console.log(e);
+                    this.properties.filePickerResult = e;
+                  },
+                  buttonLabel: "Upload Image",
+                  label: "Our Portfolio Image",
+                  key: "FilePickerID",
+                  filePickerResult: this.properties.filePickerResult,
+                  hideLocalUploadTab: true,
+                }),
               ]
             }
           ]

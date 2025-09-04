@@ -40,6 +40,7 @@
     "MixologiqHomePageWebPartStrings": "lib/webparts/mixologiqHomePage/loc/{locale}.js",
     "BrandingSectionWebPartStrings": "lib/webparts/brandingSection/loc/{locale}.js",
     "PromotionalVideosWebPartStrings": "lib/webparts/promotionalVideos/loc/{locale}.js",
-    "BrandingImagesWebPartStrings": "lib/webparts/brandingImages/loc/{locale}.js"
+    "BrandingImagesWebPartStrings": "lib/webparts/brandingImages/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
   }
 }

@@ -24,17 +24,23 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
 
   public render(): React.ReactElement<IMixologiqHomePageProps> {
     const {
+      propertyName,
+      // backgroundImage,
       description,
+      source,
       isDarkTheme,
       environmentMessage,
       hasTeamsContext,
-      userDisplayName
+      userDisplayName,
+      filePickerResult
     } = this.props;
+
+    const BannerImageLink = this.props.filePickerResult == undefined ? require('../assets/CocktailImage.jpg') : this.props.filePickerResult.fileAbsoluteUrl;
 
     return (
       <section id="mixologiqHomePage">
         
-        <div className="mixologiq-HomePage">
+        {/* <div className="mixologiq-HomePage">
           <div className="hero-content">
             <p className="hero-subtitle">Partner Marketing Hub</p>
             <h1 className="hero-title">Marketing & Branding Resources</h1>
@@ -44,6 +50,17 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
               products in your region.
             </p>
           </div> 
+        </div> */}
+
+        <div className="mixologiq-HomePage"
+           style={{
+            backgroundImage: "linear-gradient(rgba(34,39,79,0.85), rgba(34,39,79,0.85)), url(" +BannerImageLink +")"
+          }}>
+          <div className="hero-content">
+            <p className="hero-subtitle">{propertyName}</p>
+            <h1 className="hero-title">{source}</h1>
+            <p className="hero-text">{description}</p>
+          </div>  
         </div>
 
       </section>
