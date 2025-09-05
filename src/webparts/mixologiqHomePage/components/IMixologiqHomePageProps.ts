@@ -8,7 +8,7 @@ export interface IMixologiqHomePageProps {
   userDisplayName: string;
   context : any;
   propertyName: string;
-  backgroundImage: string
+  backgroundImage: string;
   source: string;
   filePickerResult: any;
 }

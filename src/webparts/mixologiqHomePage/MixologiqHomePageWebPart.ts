@@ -108,10 +108,11 @@ export default class MixologiqHomePageWebPart extends BaseClientSideWebPart<IMix
                   label: "Title"
                 }),
                 PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                  label: "Description"
                 }),
-                PropertyFieldFilePicker("portfolioImage", {
+                PropertyFieldFilePicker("filePickerResult", {
                   context: this.context,
+                  filePickerResult: this.properties.filePickerResult,
                   onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
                   properties: this.properties,
                   onSave: (e: IFilePickerResult) => {
@@ -125,8 +126,7 @@ export default class MixologiqHomePageWebPart extends BaseClientSideWebPart<IMix
                   buttonLabel: "Upload Image",
                   label: "Our Portfolio Image",
                   key: "FilePickerID",
-                  filePickerResult: this.properties.filePickerResult,
-                  hideLocalUploadTab: true,
+                  // hideLocalUploadTab: true,
                 }),
               ]
             }
