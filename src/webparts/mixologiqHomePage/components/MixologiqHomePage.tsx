@@ -37,6 +37,9 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
 
     const BannerImageLink = this.props.filePickerResult == undefined ? require('../assets/CocktailImage.jpg') : this.props.filePickerResult.fileAbsoluteUrl;
 
+    // const BannerImageLink = this.props.filePickerResult == undefined ? require('../assets/CocktailImage.jpg') : `${this.props.context.pageContext.web.absoluteUrl}/SiteAssets/ImageHeaderWebPart/${this.props.filePickerResult.fileName}${this.props.filePickerResult.fileAbsoluteUrl}`;
+
+
     return (
       <section id="mixologiqHomePage">
         
@@ -69,6 +72,9 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
   }
 }
 
+// style={{
+            // backgroundImage: `linear-gradient(rgba(34,39,79,0.85), rgba(34,39,79,0.85)), url(${BannerImageLink})`
+
 {/* <div className="MXHomePage">
        
           <img src={require("../assets/Images/CocktailImage.jpg")} alt="Mixologiq Hero" />
@@ -86,8 +92,6 @@ export default class MixologiqHomePage extends React.Component<IMixologiqHomePag
           </div>
 </div> */}
 
-
-{/* className="hero-section" */}
         
 {/* <div className="hero-overlay"></div>
 

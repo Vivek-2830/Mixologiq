@@ -118,6 +118,21 @@ export default class MixologiqHomePageWebPart extends BaseClientSideWebPart<IMix
                   onSave: (e: IFilePickerResult) => {
                     console.log(e);
                     this.properties.filePickerResult = e;
+                    
+                    // if (e.fileAbsoluteUrl == null) {
+                    //   e.downloadFileContent().then(async (result) => {
+                    //     let fileUploadResult = await sp.web.getFolderByServerRelativePath(
+                    //       `${this.context.pageContext.site.serverRelativeUrl}/SiteAssets/ImageHeaderWebPart`
+                    //     )
+                    //       .files.addUsingPath(e.fileName, result, { Overwrite: true });
+
+                    //     console.log(fileUploadResult);
+                    //     this.properties.filePickerResult = e;
+                    //     this.context.propertyPane.refresh();
+                    //     this.render();
+                    //   });
+                    // }
+                    
                   },
                   onChanged: (e: IFilePickerResult) => {
                     console.log(e);
@@ -136,3 +151,38 @@ export default class MixologiqHomePageWebPart extends BaseClientSideWebPart<IMix
     };
   }
 }
+
+// For a Image Upload are my device -----------
+// 
+// PropertyFieldFilePicker("filePickerResult", {
+//   context: this.context,
+//   filePickerResult: this.properties.filePickerResult,
+//   onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
+//   properties: this.properties,
+//   onSave: (e: IFilePickerResult) => {
+//     // console.log(e);
+    
+//     if (e.fileAbsoluteUrl == null) {
+//       e.downloadFileContent().then(async (result) => {
+//         let fileUploadResult = await sp.web.getFolderByServerRelativePath(
+//           `${this.context.pageContext.site.serverRelativeUrl}/SiteAssets/ImageHeaderWebPart`
+//         )
+//           .files.addUsingPath(e.fileName, result, { Overwrite: true });
+
+//         console.log(fileUploadResult);
+//         this.properties.filePickerResult = e;
+//         this.context.propertyPane.refresh();
+//         this.render();
+//       });
+//     }
+//     this.properties.filePickerResult = e;
+//   },
+//   onChanged: (e: IFilePickerResult) => {
+//     console.log(e);
+//     this.properties.filePickerResult = e;
+//   },
+//   buttonLabel: "Upload Image",
+//   label: "Our Portfolio Image",
+//   key: "FilePickerID",
+//   // hideLocalUploadTab: true,
+// }),

@@ -1,3 +1,4 @@
+import { WebPartContext } from "@microsoft/sp-webpart-base";
 import { IFilePickerResult } from "@pnp/spfx-property-controls";
 
 export interface IMixologiqHomePageProps {
